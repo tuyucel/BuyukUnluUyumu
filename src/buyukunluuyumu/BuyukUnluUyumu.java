@@ -21,14 +21,12 @@ public class BuyukUnluUyumu {
     }
 
     public static void UnluUyumu(String kelime) {
-        String[] Kalin = new String[]{"A","I","O","U","a", "ı", "o", "u"};
-        String[] Ince = new String[]{"E","İ","Ö","Ü","e", "i", "ö", "ü"};
-        String[] Rakamlar = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        String[] Kalin = new String[]{"A", "I", "O", "U", "a", "ı", "o", "u"};
+        String[] Ince = new String[]{"E", "İ", "Ö", "Ü", "e", "i", "ö", "ü"};
         String[] Harfler = new String[kelime.length()];
 
         int kalin = 0;
         int ince = 0;
-        int rakam = 0;
 
         for (int j = 0; j < kelime.length(); j++) {
             Harfler[j] = kelime.substring(j, j + 1);
@@ -45,21 +43,16 @@ public class BuyukUnluUyumu {
                     ince++;
                 }
             }
-            for (String rakam1 : Rakamlar) {
-                if (harf1.equals(rakam1)) {
-                    rakam++;
-                }
-            }
         }
 
-        if (rakam > 0) {
-            System.out.println("Lütfen rakam içermeyen kelime giriniz.");
-        } else {
-            if (kalin + ince == 1) {
+        switch (kalin + ince) {
+            case 1:
                 System.out.println("Tek heceli kelimelerde büyük ünlü uyumu aranmaz.");
-            } else if (kalin + ince == 0) {
+                break;
+            case 0:
                 System.out.println("Sesli harf içeren bir kelime giriniz.");
-            } else {
+                break;
+            default:
                 if (kalin > 0 && ince > 0) {
                     System.out.println("Büyük ünlü uyumuna uymaz.");
                 }
@@ -69,7 +62,7 @@ public class BuyukUnluUyumu {
                 if (ince > 0 && kalin <= 0) {
                     System.out.println("Büyük ünlü uyumuna uyar.");
                 }
-            }
+                break;
         }
     }
 }
