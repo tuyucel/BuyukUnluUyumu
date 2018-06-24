@@ -1,5 +1,6 @@
 package buyukunluuyumu;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -20,8 +21,8 @@ public class BuyukUnluUyumu {
     }
 
     public static void UnluUyumu(String kelime) {
-        String[] Kalin = new String[]{"a", "ı", "o", "u"};
-        String[] Ince = new String[]{"e", "i", "ö", "ü"};
+        String[] Kalin = new String[]{"A","I","O","U","a", "ı", "o", "u"};
+        String[] Ince = new String[]{"E","İ","Ö","Ü","e", "i", "ö", "ü"};
         String[] Rakamlar = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
         String[] Harfler = new String[kelime.length()];
 
